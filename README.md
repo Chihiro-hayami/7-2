@@ -16,4 +16,3 @@ MacOS / MAMP / PHP / MySQL / VScode
 ## ＊データベース  
 データベース：restaurant  
 テーブル：【restaurant.sql】をインポートしてください。
-あ
