@@ -88,14 +88,14 @@ class Controllers {
   //お問い合わせ
   public function form() {
     $form = $this->Form->form();
-    header('Location: form2.php');
+    header('Location: contact2.php');
     return $form;
   }
 
   //お問い合わせデータ一覧
   public function contact() {
-    $contacts = $this->Contact->findForm();
-    return $contacts;
+    $form = $this->Form->form();
+    return $form;
   }
 
   //飲食店追加

@@ -1,10 +1,14 @@
 <?php
 require_once(ROOT_PATH .'Controllers/Controller.php');
-$rest = new Controllers();
+$form = new Controllers();
 
 function e($s) {
     return htmlspecialchars($s, ENT_QUOTES, "UTF-8");
 }
+
+if($_POST) {
+    $form->form();
+  }
 ?>
 
 
@@ -25,55 +29,14 @@ function e($s) {
 <div class='back'>
 <h1>お問い合わせ</h1>
 
-    <form name="form" action="conf.php" method="POST">
+    <form name="form" action="" method="POST">
 
-        <div class='flex'>
-        <label class='main'>　　　飲食店名</label>
-            <?php if(!empty($_SESSION['nameError'])): ?>
-            <p><?php echo $_SESSION['nameError'] ?></p>
-            <?php endif; ?>
-        <input type="text" class='sub' name="name"placeholder="飲食店名" value=""><br><br>
-        </div>
+        <label class='main'>ニックネーム</label><br><br>
+        <input type="text" class='sub-form' name="name" placeholder="マヨネーズ大好き" value=""><br><br><br>
 
-        <div class='flex'>
-        <label class='main'>　　　ジャンル</label>
-            <?php if(!empty($_SESSION['genreError'])): ?>
-            <p><?php echo $_SESSION['genreError'] ?></p>
-            <?php endif; ?>
-        <input type="text"  class='sub' name="genre"placeholder="ジャンル" value=""><br><br>
-        </div>
+        <label class='main'>お問い合わせ内容</label><br><br>
+        <textarea type="text"  class='sub-form' name="body" placeholder="例）わらび餅があるお店を追加してほしいです。" value=""></textarea><br><br>
 
-        <div class='flex'>
-        <label class='main'>　　　住所　　</label>
-            <?php if(!empty($_SESSION['addressError'])): ?>
-            <p><?php echo $_SESSION['addressError'] ?></p>
-            <?php endif; ?>
-        <input type="text"  class='sub' name="address"placeholder="住所" value=""><br><br>
-        </div>
-
-        <div class='flex'>
-        <label class='main'>　　　最寄り駅</label>
-            <?php if(!empty($_SESSION['stationError'])): ?>
-            <p><?php echo $_SESSION['stationError'] ?></p>
-            <?php endif; ?>
-        <input type="text"  class='sub' name="station"placeholder="最寄り駅" value=""><br><br>
-        </div>
-
-        <div class='flex'>
-        <label class='main'>　　　取り組み　</label>
-            <?php if(!empty($_SESSION['effortError'])): ?>
-            <p><?php echo $_SESSION['effortError'] ?></p>
-            <?php endif; ?>
-        <textarea  class='sub' name="effort"></textarea><br><br>
-        </div>
-                
-        <div class='flex'>
-        <label class='main'>　　　URL　　</label>
-            <?php if(!empty($_SESSION['URLError'])): ?>
-            <p><?php echo $_SESSION['URLError'] ?></p>
-            <?php endif; ?>
-        <input type="text"  class='sub' name="URL"placeholder="URL" value=""><br><br>
-        </div>
 
         <div id='center'>
         <input type="hidden" name="log" value="1">

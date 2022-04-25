@@ -3,11 +3,11 @@
 <body>
 
 <div id='header'>
-<div id='flex' class='header'>
+<div id='f' class='header'>
 
-    <a href="index.php"><img src="img/logo.png" alt="logo"></a>
+    <a href="index.php"><img src="img/logo.png" alt="logo" id='img'></a>
     
-   
+    <a href="contact1.php" id='a'>お問い合わせ</a>
 
 </div>
 </div>

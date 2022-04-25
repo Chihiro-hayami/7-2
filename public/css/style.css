@@ -101,23 +101,30 @@ table tr td{
 .sub input{
     padding: 5px 40px;
 }
+#AAA{
+    background-color: #ee7800;
+    color : #fff;
+    padding: 5px 10px;
+    cursor: pointer;
+}
 
 
 /*＝＝header＝＝*/
 #header{
-    height: 100px;
+    height: 80px;
 }
-#flex{
+#f{
     display: flex;
     justify-content: space-between;
+    margin: 20px 30px;
 }
 .header{
-    margin: 30px 30px;
+    margin: 20px 30px;
 }
-.header .link{
-    padding-top: 30px;
+#a{
+    padding-top: 20px;
 }
-.header img{
+#img{
     height: 60px;
 }
 
@@ -129,9 +136,9 @@ table tr td{
     margin-top: 150px;
 }
 
-#AAA{
-    cursor: pointer;
-}
-#test{
-    background-color: #ffffff;
+
+/*＝＝contact＝＝*/
+.sub-form{
+    font-size: 20px;
+    padding: 20px 100px;
 }
