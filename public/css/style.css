@@ -1,0 +1,137 @@
+
+/*-----------INDEX------------
+
+*＠共通--16
+*＠header--31
+*＠footer--50
+*＠index--57
+*＠view--86
+*＠addinfo--115
+*＠entry,form,addUser--140
+*＠
+*＠
+
+*/
+
+/*＝＝＝共通＝＝＝*/
+*{
+    text-decoration: none;
+    color: #553f26;
+    margin: 0;
+    padding: 0;
+}
+a:visited{
+    color: #553f26;
+}
+a:hover{
+    color: #86725a;
+}
+.button {
+    display       : inline-block;
+    border-radius : 30%;
+    font-size     : 16pt;
+    text-align    : center; 
+    cursor        : pointer;  
+    padding       : 15px 15px; 
+    background    : #ee7800;  
+    line-height   : 1em;
+    transition    : .3s; 
+    border        : 2px solid #ee7800;
+  }
+.button:hover {
+    color         : #ee7800; 
+    background    : #ffffff; 
+}
+.btn {
+    display       : inline-block;
+    border-radius : 30%;
+    font-size     : 16pt;
+    text-align    : center; 
+    cursor        : pointer;  
+    padding       : 15px 15px; 
+    color         : #ee7800; 
+    background    : #ffffff; 
+    line-height   : 1em;
+    transition    : .3s; 
+  }
+.btn:hover {
+    border        : 2px solid #ee7800;
+    background    : #ffbe7c; 
+}
+.flex{
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 30px;
+}
+#flex{
+    display: flex;
+    margin: 50px 30px;
+}
+#center{
+    margin: 50px 0px;
+    text-align: center;
+}
+.back{
+    margin: 10px 30px;
+    padding: 50px 20px;
+    border-radius : 150px 0px;   
+    background-color: #fde8d0;
+}
+h1{
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 50px;
+}
+.main{
+    font-size: 25px;
+    font-weight: bold;
+}
+.sub{
+    font-size: 20px;
+}
+table tr td{
+    padding: 20px 70px;
+}
+#right{
+    margin-right: 30px;
+}
+#bottom{
+    margin-bottom: 60px;
+}
+.sub input{
+    padding: 5px 40px;
+}
+
+
+/*＝＝header＝＝*/
+#header{
+    height: 100px;
+}
+#flex{
+    display: flex;
+    justify-content: space-between;
+}
+.header{
+    margin: 30px 30px;
+}
+.header .link{
+    padding-top: 30px;
+}
+.header img{
+    height: 60px;
+}
+
+
+/*＝＝footer＝＝*/
+.footer{
+    text-align: center;
+    height: 100px;
+    margin-top: 150px;
+}
+
+#AAA{
+    cursor: pointer;
+}
+#test{
+    background-color: #ffffff;
+}
