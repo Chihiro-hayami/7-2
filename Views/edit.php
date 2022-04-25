@@ -69,47 +69,47 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 
         <label for="name" class='main'>　　　　飲食店名　　　</label>
-        <?php if (isset($errors['name'])) {
-        echo $errors['name'];}?>
-    <input type="text" class='sub' name="name" value="<?php if($_POST) { //編集後の出力
+        <div class='v1'><?php if (isset($errors['name'])) {
+        echo $errors['name'];}?></div>
+    <input type="text" class='sub1' name="name" value="<?php if($_POST) { //編集後の出力
         echo e($_POST['name']);
         } else { //編集前の出力
         echo $params['name'];}?>"><br><br>
     
         <label for="genre" class='main'>　　　　ジャンル　　　</label>
-        <?php if (isset($errors['genre'])) {
-        echo $errors['genre'];}?>
-    <input type="text" class='sub' name="genre" value="<?php if($_POST) { //編集後の出力
+        <div class='v1'><?php if (isset($errors['genre'])) {
+        echo $errors['genre'];}?></div>
+    <input type="text" class='sub1' name="genre" value="<?php if($_POST) { //編集後の出力
         echo e($_POST['genre']);
         } else { //編集前の出力
         echo $params['genre'];}?>"><br><br>
 
         <label for="address" class='main'>　　　　住所　　　　　</label>
-        <?php if (isset($errors['address'])) {
-        echo $errors['address'];}?>
-    <input type="text" class='sub' name="address" value="<?php if($_POST) { //編集後の出力
+        <div class='v1'><?php if (isset($errors['address'])) {
+        echo $errors['address'];}?></div>
+    <input type="text" class='sub1' name="address" value="<?php if($_POST) { //編集後の出力
         echo e($_POST['address']);
         } else { //編集前の出力
         echo $params['address'];}?>"><br><br>
 
         <label for="station" class='main'>　　　　最寄り駅　　　</label>
-        <?php if (isset($errors['station'])) {
-        echo $errors['station'];}?>
-    <input type="text" class='sub' name="station" value="<?php if($_POST) { //編集後の出力
+        <div class='v1'><?php if (isset($errors['station'])) {
+        echo $errors['station'];}?></div>
+    <input type="text" class='sub1' name="station" value="<?php if($_POST) { //編集後の出力
         echo e($_POST['station']);
         } else { //編集前の出力
         echo $params['station'];}?>"><br><br>
 
         <label for="effort" class='main'>　　　　取り組み　　　</label>
-        <?php if (isset($errors['effort'])) {
-        echo $errors['effort'];}?>
-        <textarea class='sub' name="effort"><?php if($_POST)
+        <div class='v1'><?php if (isset($errors['effort'])) {
+        echo $errors['effort'];}?></div>
+        <textarea class='sub1' name="effort"><?php if($_POST)
         {echo e($_POST['effort']);} else {echo $params['effort'];} ?></textarea><br><br>
 
         <label for="URL" class='main'>　　　　URL　　　　　</label>
-        <?php if (isset($errors['URL'])) {
-        echo $errors['URL'];}?>
-    <input type="text" class='sub' name="URL" value="<?php if($_POST) { //編集後の出力
+        <div class='v1'><?php if (isset($errors['URL'])) {
+        echo $errors['URL'];}?></div>
+    <input type="text" class='sub1' name="URL" value="<?php if($_POST) { //編集後の出力
         echo e($_POST['URL']);
         } else { //編集前の出力
         echo $params['URL'];}?>"><br><br>

@@ -1,50 +1,33 @@
 <?php
 require_once(ROOT_PATH . 'Controllers/Controller.php');
-require_once(ROOT_PATH . 'function.php');
 
 session_start();
 $_SESSION = array();
 session_destroy();
 session_start();
 $controller = new Controllers();
-if($_SERVER['REQUEST_METHOD'] === 'POST'){
-  $error = [];
 
-  if(empty($_POST['email'])){
-      $error['email'] = 'メールアドレスは必須入力です';
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+  $errors = [];
+  if(empty($_POST['email'])) {
+      $errors['email'] = '*メールアドレスは必須入力です。';
   }else{
-      $pattern = '/^([a-z0-9+-]+)(.[a-z0-9+-]+)*@([a-z0-9-]+.)+[a-z]{2,6}$/uiD';
-      if (!preg_match($pattern, $_POST['email'])){
-          $error['email'] = 'メールアドレスを正しく入力してください。';
-      }
-  }
+      if(!preg_match('/\A[[:^cntrl:]]{1,50}\z/u', $_POST['email'])) {
+      $errors['email'] = '*50文字以内でご入力ください。';
+  }}//飲食店名
+
+  if(empty($_POST['password'])) {
+      $errors['password'] = '*パスワードは必須入力です。';
+  }else{
+      if(!preg_match('/\A[[:^cntrl:]]{1,20}\z/u', $_POST['password'])) {
+      $errors['password'] = '*20文字以内でご入力ください。';
+  }}//ジャンル
   
-  if(empty($_POST['password'])){
-      $error['password'] = 'パスワードは必須入力です';
-  } else {
-      $pattern = '/\A[a-z\d]{0,100}+\z/i';
-      if (!preg_match($pattern, $_POST['password'])){
-          $error['password'] = 'パスワードを正しく入力してください。';
-      }
-  }
-
-  if(empty($_POST['passCheck'])){
-      $error['passCheck'] = '確認パスワードは必須入力です';
-  } else {
-      if($_POST['password'] != $_POST['passCheck']){
-          $error['passCheck'] = 'パスワードが一致していません。';
-      }
-  }
-
-  if(count($error) === 0){
+  if(count($errors) === 0){
       if(isset($_POST)){
-          $users->reset();
+          $controller->login();
       }
   }
-}
-
-if($_POST) {
-  $controller->login();
 }
 
 // POST送信されたときにログイン判定を行う
@@ -71,10 +54,14 @@ if($_POST) {
   <table>
     <tr>
       <th class='main'>Email</th>
+      <div class='v2'><?php if (isset($errors['email'])) {
+        echo $errors['email'];}?></div>
       <td  class='sub'><input type="email" name="email"></input></td>
     </tr>
     <tr>
       <th class='main'>パスワード</th>
+      <div class='v2'><?php if (isset($errors['password'])) {
+        echo $errors['password'];}?></div>
       <td class='sub'><input type="password" name="password"></input></td>
     </tr>
   </table>

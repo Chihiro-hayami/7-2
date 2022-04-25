@@ -1,12 +1,22 @@
 <?php
 require_once(ROOT_PATH . 'Controllers/Controller.php');
-require_once(ROOT_PATH . 'function.php');
 
 $restaurant = new Controllers;
 
-// POST送信されたときに追加を行う
-if($_POST) {
-  $restaurant->add_user();
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+  $errors = [];
+  if(empty($_POST['email'])) {
+      $errors['email'] = '*メールアドレスは必須入力です。';
+  }else{
+      if(!preg_match('/\A[[:^cntrl:]]{1,100}\z/u', $_POST['email'])) {
+      $errors['email'] = '*メールアドレスは100文字以内でご入力ください。';
+  }}//メールアドレス
+
+  if(count($errors) === 0){
+      if(isset($_POST)){
+        $restaurant->add_user();
+      }
+  }//エラーがなかったら登録
 }
 ?>
 
@@ -28,16 +38,20 @@ if($_POST) {
   <table>
     <tr>
       <td class='main'>メールアドレス</td>
+      <div class='v2'><?php if (isset($errors['email'])) {
+        echo $errors['email'];}?></div>
       <td class='sub'><input type="text" name="email"></input></td>
     </tr>
 
     <tr>
       <td class='main'>パスワード</td>
+
       <td class='sub'><input type="password" name="pass"></input></td>
     </tr>
 
     <tr>
       <td class='main'>確認用パスワード</td>
+
       <td class='sub'><input type="password" name="passCheck"></input></td>
     </tr>
   </table>

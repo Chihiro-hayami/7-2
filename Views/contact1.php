@@ -6,9 +6,29 @@ function e($s) {
     return htmlspecialchars($s, ENT_QUOTES, "UTF-8");
 }
 
-if($_POST) {
-    $form->form();
-  }
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $errors = [];
+    if(empty($_POST['name'])) {
+        $errors['name'] = '*ニックネームは必須入力です。';
+    }else{
+        if(!preg_match('/\A[[:^cntrl:]]{1,20}\z/u', $_POST['name'])) {
+        $errors['name'] = '*20文字以内でご入力ください。';
+    }}//ニックネーム
+
+    if(empty($_POST['body'])) {
+        $errors['body'] = '*お問い合わせ内容は必須入力です。';
+    }else{
+        if(!preg_match('/\A[[:^cntrl:]]{1,100}\z/u', $_POST['body'])) {
+        $errors['body'] = '*100文字以内でご入力ください。';
+    }}//問い合わせ内容
+
+
+    if(count($errors) === 0){
+        if(isset($_POST)){
+            $form->form();
+        }
+    }
+}
 ?>
 
 
@@ -31,10 +51,14 @@ if($_POST) {
 
     <form name="form" action="" method="POST">
 
-        <label class='main'>ニックネーム</label><br><br>
+        <label class='main'>ニックネーム</label><br>
+        <div class='v2'><?php if (isset($errors['name'])) {
+        echo $errors['name'];}?></div>
         <input type="text" class='sub-form' name="name" placeholder="マヨネーズ大好き" value=""><br><br><br>
 
-        <label class='main'>お問い合わせ内容</label><br><br>
+        <label class='main'>お問い合わせ内容</label><br>
+        <div class='v2'><?php if (isset($errors['body'])) {
+        echo $errors['body'];}?></div>
         <textarea type="text"  class='sub-form' name="body" placeholder="例）わらび餅があるお店を追加してほしいです。" value=""></textarea><br><br>
 
 

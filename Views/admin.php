@@ -23,7 +23,7 @@ $params = $rest->index();
 
 <div class='back' >
         <h1>飲食店一覧</h1>
-        <div id='flex' id='bottom'>
+        <div class='flex' id='bottom'>
         <a href="entry1.php" class='button'>飲食店追加</a>
         <a href="addUser.php" class='button'>管理人追加</a>
         </div>
