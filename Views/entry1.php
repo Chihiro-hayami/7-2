@@ -97,14 +97,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <label class='main'>　　　最寄り駅</label>
         <div class='v1'><?php if (isset($errors['station'])) {
         echo $errors['station'];}?></div>
-        <input type="text"  class='sub' name="station"placeholder="最寄り駅" value=""><br><br>
+        <input type="text"  class='sub' name="station" placeholder="最寄り駅" value=""><br><br>
         </div>
 
         <div class='flex'>
         <label class='main'>　　　取り組み　</label>
         <div class='v1'><?php if (isset($errors['effort'])) {
         echo $errors['effort'];}?></div>
-        <textarea  class='sub' name="effort"></textarea><br><br>
+        <textarea  placeholder="取り組み内容" class='s' name="effort"></textarea><br><br>
         </div>
                 
         <div class='flex'>

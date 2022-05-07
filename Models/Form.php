@@ -12,7 +12,7 @@ class Form extends Db{
    * @param integer $page ページ番号
    * @return Array $result (20件ごと)
    */
-  public function findAll($page = 0):Array{
+  public function findall($page = 0):Array{
     $sql = 'SELECT * FROM form';
     $sql .= ' LIMIT 20 OFFSET '.(20 * $page);
     $sth = $this->dbh->prepare($sql);

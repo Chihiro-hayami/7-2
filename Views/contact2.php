@@ -20,7 +20,7 @@ $form = new Controllers();
 
 <div class='back'>
     <h1>お問い合わせが完了しました。</h1>
-    <p><a href="admin.php" class='btn'>トップへ戻る</a></p>
+    <p><a href="index.php" class='btn'>トップへ戻る</a></p>
 </div>
 
 <?php  include ( dirname(__FILE__) . '/footer.php' ); ?>

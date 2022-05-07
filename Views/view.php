@@ -50,7 +50,7 @@ $params = $rest->view();
     </tr>
 
     <tr>
-      <td class='main'>取り組み</td>
+      <td class='main' id='effort'>取り組み</td>
       <td class='sub'><?=$params['effort'] ?></td>
     </tr>
 
@@ -66,7 +66,7 @@ $params = $rest->view();
   </table>
 </div>
 
-<div id='center'><a href="index.php" class='button'>一覧へ戻る</a></div>
+<div id='center'><a href="#" onclick="history.back(-1)" class='btn'>戻る</a></div>
 </div>
 
 <?php  include ( dirname(__FILE__) . '/footer.php' ); ?>

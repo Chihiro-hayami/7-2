@@ -2,12 +2,11 @@
 /*-----------INDEX------------
 
 *＠共通--16
-*＠header--31
-*＠footer--50
-*＠index--57
-*＠view--86
-*＠addinfo--115
-*＠entry,form,addUser--140
+*＠header--117
+*＠footer--137
+*＠contact--145
+*＠validation--150
+*＠
 *＠
 *＠
 
@@ -147,6 +146,22 @@ table tr td{
     font-size: 20px;
     padding: 20px 100px;
 }
+.main2{
+    font-size: 20px;
+    background-color: #fff;
+}
+.sub2{
+    font-size: 15px;
+    background-color: #fff;
+}
+#initial{
+    padding: initial;
+    padding: 20px 0px;
+    border-radius : 10px;
+}
+.cont{
+    margin-bottom: 30px;
+} 
 
 /*＝＝バリデーション関連＝＝*/
 .v1{
@@ -156,5 +171,13 @@ table tr td{
 .v2{
     text-align: center;
     color: #ff0000;
-}/*編集バリデーション*/
+}
 
+
+.s{
+    font-size: 20px;
+    height: 160px;
+}
+#effort{
+    white-space: pre-wrap;
+}

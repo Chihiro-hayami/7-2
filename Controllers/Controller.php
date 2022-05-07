@@ -94,8 +94,8 @@ class Controllers {
 
   //お問い合わせデータ一覧
   public function contact() {
-    $form = $this->Form->form();
-    return $form;
+    $forms = $this->Form->findall();
+    return $forms;
   }
 
   //飲食店追加
