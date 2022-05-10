@@ -59,7 +59,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <label class='main'>お問い合わせ内容</label><br>
         <div class='v2'><?php if (isset($errors['body'])) {
         echo $errors['body'];}?></div>
-        <textarea type="text"  class='sub-form' name="body" placeholder="例）わらび餅があるお店を追加してほしいです。" value=""></textarea><br><br>
+        <textarea type="text"  class='sub-form2' name="body" placeholder="例）わらび餅があるお店を追加してほしいです。" value=""></textarea><br><br>
 
 
         <div id='center'>

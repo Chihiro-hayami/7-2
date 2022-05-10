@@ -103,7 +103,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <label for="effort" class='main'>　　　　取り組み　　　</label>
         <div class='v1'><?php if (isset($errors['effort'])) {
         echo $errors['effort'];}?></div>
-        <textarea class='sub1' name="effort"><?php if($_POST)
+        <textarea class='sub3' name="effort"><?php if($_POST)
         {echo e($_POST['effort']);} else {echo $params['effort'];} ?></textarea><br><br>
 
         <label for="URL" class='main'>　　　　URL　　　　　</label>
