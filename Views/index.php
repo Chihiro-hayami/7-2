@@ -44,7 +44,7 @@ e.innerHTML = data;
 <h3 id='center'>アレルギー対策に理解を深めるための取り組みをしている飲食店一覧です。<br>
 エキス不可などをしっかりと理解し料理を提供しているお店を取材しまとめました。
 </h3>
-<h5　id='center'>＊「このサイトを見た！」でワンドリンクプレゼント♪</h5><br><br>
+<h5>＊「このサイトを見た！」でワンドリンクプレゼント♪</h5><br><br>
   <?php foreach($params as $param): ?>
     <div class='flex'>
       <div class='main'>　　　＊<?= $param['name'] ?></div>
